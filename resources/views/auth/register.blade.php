@@ -15,7 +15,8 @@
             <div class="row">
               <div class="form-group col-6">
                 <label for="nama">Nama</label>
-                <input id="nama" type="text" class="form-control" name="nama" autofocus>
+                <input id="nama" type="text" class="form-control" name="nama" autofocus
+                  value="{{ old('nama') }}">
                 @error('nama')
                   <div class="text-small text-danger">
                     {{ $message }}
@@ -24,7 +25,7 @@
               </div>
               <div class="form-group col-6">
                 <label for="username">Username</label>
-                <input id="username" type="text" class="form-control" name="username">
+                <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}">
                 @error('username')
                   <div class="text-small text-danger">
                     {{ $message }}
@@ -35,7 +36,7 @@
 
             <div class="form-group">
               <label for="alamat">Alamat</label>
-              <input id="alamat" type="text" class="form-control" name="alamat">
+              <input id="alamat" type="text" class="form-control" name="alamat" value="{{ old('alamat') }}">
               @error('alamat')
                 <div class="text-small text-danger">
                   {{ $message }}
@@ -44,7 +45,7 @@
             </div>
 
             <div class="row">
-              <div class="form-group col-6">
+              <div class="form-group col-12">
                 <label for="gender" class="d-block">Gender</label>
                 <select name="gender" id="" class="form-control">
                   <option value="">--Pilih Gender--</option>
@@ -57,27 +58,33 @@
                   </div>
                 @enderror
               </div>
+            </div>
+
+            <div class="row">
               <div class="form-group col-6">
                 <label for="no_telepon" class="d-block">No. Telepon</label>
-                <input id="no_telepon" type="text" class="form-control" name="no_telepon">
+                <input id="no_telepon" type="text" class="form-control" name="no_telepon"
+                  value="{{ old('no_telepon') }}">
                 @error('no_telepon')
                   <div class="text-small text-danger">
                     {{ $message }}
                   </div>
                 @enderror
               </div>
-            </div>
 
-            <div class="row">
               <div class="form-group col-6">
                 <label>No. KTP</label>
-                <input type="text" name="no_ktp" class="form-control">
+                <input type="text" name="no_ktp" class="form-control" value="{{ old('no_ktp') }}">
                 @error('no_ktp')
                   <div class="text-small text-danger">
                     {{ $message }}
                   </div>
                 @enderror
               </div>
+
+            </div>
+
+            <div class="row">
               <div class="form-group col-6">
                 <label>Password</label>
                 <input type="password" name="password" class="form-control">
@@ -86,6 +93,11 @@
                     {{ $message }}
                   </div>
                 @enderror
+              </div>
+
+              <div class="form-group col-6">
+                <label>Ulangi Password</label>
+                <input type="password" name="password_confirmation" class="form-control">
               </div>
             </div>
 

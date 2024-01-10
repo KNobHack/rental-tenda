@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('penyewa', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->references('id')->on('users');
             $table->string('nama');
             $table->string('alamat');
             $table->enum('gender', ['laki-laki', 'perempuan']);
-            $table->string('no_telpon');
+            $table->string('no_telepon');
             $table->string('no_ktp');
         });
     }

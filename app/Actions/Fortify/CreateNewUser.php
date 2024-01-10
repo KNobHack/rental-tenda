@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Models\Penyewa;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -33,6 +34,15 @@ class CreateNewUser implements CreatesNewUsers
             'username' => $input['username'],
             'password' => Hash::make($input['password']),
             'role_id'  => 2,
+        ]);
+
+        Penyewa::create([
+            'user_id' => $user->id,
+            'nama' => $input['nama'],
+            'alamat' => $input['alamat'],
+            'gender' => $input['gender'],
+            'no_telepon' => $input['no_telepon'],
+            'no_ktp' => $input['no_ktp'],
         ]);
 
         return $user;
