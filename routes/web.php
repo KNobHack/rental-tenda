@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PaketController;
@@ -32,6 +33,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('tipe_tenda', TipeTendaController::class)->except(['show']);
         Route::resource('barang', BarangController::class)->except(['show']);
         Route::resource('paket', PaketController::class)->except(['show']);
+        Route::resource('customer', CustomerController::class)->except(['show']);
     });
 
     Route::group(['middleware' => 'role:customer'], function () {

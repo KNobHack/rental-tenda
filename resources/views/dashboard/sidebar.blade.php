@@ -43,7 +43,7 @@
         </a>
       </li>
       <li>
-        <a class="nav-link" href="<?= url('admin/data_customer') ?>">
+        <a class="nav-link" href="<?= route('customer.index') ?>">
           <i class="fas fa-users"></i>
           <span>Data Customer</span></a>
       </li>
