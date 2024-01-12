@@ -29,9 +29,9 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
         Route::resource('tenda', TendaController::class);
-        Route::resource('tipe_tenda', TipeTendaController::class);
-        Route::resource('barang', BarangController::class);
-        Route::resource('paket', PaketController::class);
+        Route::resource('tipe_tenda', TipeTendaController::class)->except(['show']);
+        Route::resource('barang', BarangController::class)->except(['show']);
+        Route::resource('paket', PaketController::class)->except(['show']);
     });
 
     Route::group(['middleware' => 'role:customer'], function () {
