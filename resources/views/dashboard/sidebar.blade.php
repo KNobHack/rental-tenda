@@ -21,11 +21,12 @@
           <span>Dashboard</span></a>
       </li>
       <li>
-        <a class="nav-link" href="<?= url('admin/data_tenda') ?>"><i class="fas fa-car"></i> <span>Data
-            Tenda</span></a>
+        <a class="nav-link" href="<?= route('tenda.index') ?>">
+          <i class="fas fa-car"></i><span>Data Tenda</span>
+        </a>
       </li>
       <li>
-        <a class="nav-link" href="<?= url('admin/data_tipe') ?>"><i class="fas fa-grip-horizontal"></i>
+        <a class="nav-link" href="<?= route('tipe_tenda.index') ?>"><i class="fas fa-grip-horizontal"></i>
           <span>Data Tipe</span></a>
       </li>
       <li>

@@ -15,6 +15,11 @@ class TipeTenda extends Model
     public $timestamps    = false;
     public $incrementing  = false;
 
+    protected $fillable = [
+        'kode',
+        'nama',
+    ];
+
     public function tendas(): Relation
     {
         return $this->hasMany(Tenda::class, 'kode_tipe', 'kode');

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->bigInteger('harga');
             $table->bigInteger('denda');
             $table->string('gambar');
+            $table->boolean('tersedia');
 
             $table->foreign('kode_tipe')->references('kode')->on('tipe_tenda');
         });
