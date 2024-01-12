@@ -3,7 +3,7 @@
 @section('content')
   <section class="section">
     <div class="section-header">
-      <h1>Detail tenda</h1>
+      <h1>Detail Tenda</h1>
     </div>
   </section>
 

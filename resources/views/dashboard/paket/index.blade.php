@@ -38,10 +38,14 @@
           <td><?= $pkt->harga ?></td>
           <td><?= $pkt->denda ?></td>
           <td>
-            <span class="badge badge-primary">Tenda</span>
+            @foreach ($pkt->tenda as $td)
+              <span class="badge badge-primary">{{ $td->merek }}</span>
+            @endforeach
           </td>
           <td>
-            <span class="badge badge-primary">Barang</span>
+            @foreach ($pkt->barang as $br)
+              <span class="badge badge-primary">{{ $br->nama }}</span>
+            @endforeach
           </td>
           <td>
             <a href="<?= route('paket.edit', $pkt->id) ?>" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>

@@ -3,7 +3,7 @@
 @section('content')
   <section class="section">
     <div class="section-header">
-      <h1>Data Tenda</h1>
+      <h1>Data Barang</h1>
     </div>
 
     <a href="<?= route('barang.create') ?>" class="btn btn-primary mb-3">Tambah Data</a>

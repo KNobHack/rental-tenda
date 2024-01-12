@@ -25,6 +25,6 @@ class Paket extends Model
 
     public function barang(): Relation
     {
-        return $this->belongsToMany(Barang::class);
+        return $this->belongsToMany(Barang::class, 'paket_barang');
     }
 }

@@ -3,7 +3,7 @@
 @section('content')
   <section class="section">
     <div class="section-header">
-      <h1>Form Input Data barang</h1>
+      <h1>Form Input Data Barang</h1>
     </div>
 
     <div class="card">
