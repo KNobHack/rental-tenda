@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaketController;
 use App\Http\Controllers\TendaController;
 use App\Http\Controllers\TipeTendaController;
 use Illuminate\Support\Facades\Route;
@@ -28,6 +30,8 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::resource('tenda', TendaController::class);
         Route::resource('tipe_tenda', TipeTendaController::class);
+        Route::resource('barang', BarangController::class);
+        Route::resource('paket', PaketController::class);
     });
 
     Route::group(['middleware' => 'role:customer'], function () {

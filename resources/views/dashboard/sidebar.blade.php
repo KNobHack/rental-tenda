@@ -22,23 +22,39 @@
       </li>
       <li>
         <a class="nav-link" href="<?= route('tenda.index') ?>">
-          <i class="fas fa-car"></i><span>Data Tenda</span>
+          <i class="fas fa-car"></i>
+          <span>Data Tenda</span>
         </a>
       </li>
       <li>
-        <a class="nav-link" href="<?= route('tipe_tenda.index') ?>"><i class="fas fa-grip-horizontal"></i>
+        <a class="nav-link" href="<?= route('tipe_tenda.index') ?>">
+          <i class="fas fa-grip-horizontal"></i>
           <span>Data Tipe</span></a>
       </li>
       <li>
-        <a class="nav-link" href="<?= url('admin/data_customer') ?>"><i class="fas fa-users"></i>
+        <a class="nav-link" href="<?= route('barang.index') ?>">
+          <i class="fas fa-grip-horizontal"></i>
+          <span>Data Barang</span></a>
+      </li>
+      <li>
+        <a class="nav-link" href="<?= route('paket.index') ?>">
+          <i class="fas fa-car"></i>
+          <span>Data Paket</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="<?= url('admin/data_customer') ?>">
+          <i class="fas fa-users"></i>
           <span>Data Customer</span></a>
       </li>
       <li>
-        <a class="nav-link" href="<?= url('admin/transaksi') ?>"><i class="fas fa-random"></i>
+        <a class="nav-link" href="<?= url('admin/transaksi') ?>">
+          <i class="fas fa-random"></i>
           <span>Transaksi</span></a>
       </li>
       <li>
-        <a class="nav-link" href="<?= url('admin/laporan') ?>"><i class="fas fa-clipboard-list"></i>
+        <a class="nav-link" href="<?= url('admin/laporan') ?>">
+          <i class="fas fa-clipboard-list"></i>
           <span>Laporan</span></a>
       </li>
       <li>
