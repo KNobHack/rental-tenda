@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rental', function (Blueprint $table) {
+        Schema::create('paket_tenda', function (Blueprint $table) {
             $table->id();
-            $table->date('tgl_rental');
-            $table->date('tgl_kembali');
-            $table->date('tgl_pengembalian');
-            $table->boolean('rental_selesai');
+            $table->foreignId('tenda_id')->references('id')->on('tenda');
+            $table->foreignId('paket_id')->references('id')->on('paket');
         });
     }
 
@@ -25,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rental');
+        Schema::dropIfExists('paket_tenda');
     }
 };

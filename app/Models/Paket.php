@@ -15,6 +15,16 @@ class Paket extends Model
 
     public function rental(): Relation
     {
-        return $this->hasMany(Rental::class);
+        return $this->belongsToMany(Rental::class);
+    }
+
+    public function tenda(): Relation
+    {
+        return $this->belongsToMany(Tenda::class);
+    }
+
+    public function barang(): Relation
+    {
+        return $this->belongsToMany(Barang::class);
     }
 }

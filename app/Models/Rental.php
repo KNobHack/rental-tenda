@@ -15,7 +15,7 @@ class Rental extends Model
 
     public function paket(): Relation
     {
-        return $this->belongsTo(Paket::class);
+        return $this->belongsToMany(Paket::class);
     }
 
     public function tenda(): Relation

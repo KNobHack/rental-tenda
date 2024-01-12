@@ -17,4 +17,9 @@ class Barang extends Model
     {
         return $this->belongsToMany(Rental::class);
     }
+
+    public function paket(): Relation
+    {
+        return $this->belongsToMany(Paket::class);
+    }
 }
