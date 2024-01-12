@@ -48,7 +48,7 @@
           <span>Data Customer</span></a>
       </li>
       <li>
-        <a class="nav-link" href="<?= url('admin/transaksi') ?>">
+        <a class="nav-link" href="<?= route('transaksi.index') ?>">
           <i class="fas fa-random"></i>
           <span>Transaksi</span></a>
       </li>

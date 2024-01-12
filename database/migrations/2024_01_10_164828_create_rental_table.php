@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('rental', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('penyewa_id')->references('id')->on('penyewa');
             $table->date('tgl_rental');
             $table->date('tgl_kembali');
-            $table->date('tgl_pengembalian');
-            $table->boolean('rental_selesai');
+            $table->date('tgl_pengembalian')->nullable();
+            $table->boolean('rental_selesai')->default(false);
         });
     }
 
