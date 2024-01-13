@@ -25,6 +25,10 @@ Route::get('/', function () {
     return redirect()->route('beranda');
 });
 
+Route::get('/beranda', [HomeController::class, 'beranda'])->name('beranda');
+Route::get('/sewa/paket', [HomeController::class, 'sewaPaket'])->name('sewa-paket');
+Route::get('/sewa/tenda', [HomeController::class, 'sewaTenda'])->name('sewa-tenda');
+Route::get('/sewa/barang', [HomeController::class, 'sewaBarang'])->name('sewa-barang');
 Route::group(['middleware' => 'auth'], function () {
 
     Route::group(['middleware' => 'role:admin'], function () {
@@ -39,4 +43,3 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
     });
 });
-Route::get('/beranda', [HomeController::class, 'beranda'])->name('beranda');

@@ -17,7 +17,7 @@
     </div>
     <ul class="sidebar-menu">
       <li>
-        <a class="nav-link" href="<?= url('admin/dashboard') ?>"><i class="fas fa-tachometer-alt"></i>
+        <a class="nav-link" href="<?= route('dashboard') ?>"><i class="fas fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
       <li>

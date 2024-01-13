@@ -4,14 +4,6 @@
   <!-- Hero Section Begin -->
   <section class="hero">
     <div class="container">
-      <div class="hero__search">
-        <div class="hero__search__form">
-          <form action="#">
-            <input type="text" placeholder="Cari Produk">
-            <button type="submit" class="site-btn">Cari</button>
-          </form>
-        </div>
-      </div>
       <div class="hero__item set-bg" data-setbg="{{ url('assets/gambar/hero.jpg') }}">
         <div class="hero__text">
           <span>Rental Tenda</span>
@@ -20,8 +12,6 @@
           <a href="#" class="primary-btn">Rental Sekarang</a>
         </div>
       </div>
-
-    </div>
     </div>
   </section>
   <!-- Hero Section End -->

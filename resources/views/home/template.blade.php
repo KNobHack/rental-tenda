@@ -37,9 +37,10 @@
     </div>
     <div class="humberger__menu__cart">
       <ul>
+        <li><a href="#"><i class="fa fa-random"></i></a></li>
         <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
       </ul>
-      <div class="header__cart__price">item: <span>$150.00</span></div>
+      <div class="header__cart__price">total: <span>$150.00</span></div>
     </div>
     <div class="humberger__menu__widget">
       <div class="header__top__right__auth">
@@ -49,8 +50,9 @@
     <nav class="humberger__menu__nav mobile-menu">
       <ul>
         <li class="active"><a href="{{ route('beranda') }}">Beranda</a></li>
-        <li><a href="#">Sewa</a></li>
-        <li><a href="#">Transaksi</a></li>
+        <li><a href="{{ route('sewa-paket') }}">Sewa Paket</a></li>
+        <li><a href="{{ route('sewa-tenda') }}">Sewa Tenda</a></li>
+        <li><a href="{{ route('sewa-barang') }}">Sewa Barang</a></li>
       </ul>
     </nav>
     <div id="mobile-menu-wrap"></div>
@@ -101,17 +103,19 @@
           <nav class="header__menu">
             <ul>
               <li class="active"><a href="{{ route('beranda') }}">Beranda</a></li>
-              <li><a href="#">Sewa</a></li>
-              <li><a href="#">Transaksi</a></li>
+              <li><a href="{{ route('sewa-paket') }}">Sewa Paket</a></li>
+              <li><a href="{{ route('sewa-tenda') }}">Sewa Tenda</a></li>
+              <li><a href="{{ route('sewa-barang') }}">Sewa Barang</a></li>
             </ul>
           </nav>
         </div>
         <div class="col-lg-3">
           <div class="header__cart">
             <ul>
+              <li><a href="#"><i class="fa fa-random"></i> <span>3</span></a></li>
               <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
             </ul>
-            <div class="header__cart__price">item: <span>$150.00</span></div>
+            <div class="header__cart__price">total: <span>$150.00</span></div>
           </div>
         </div>
       </div>
