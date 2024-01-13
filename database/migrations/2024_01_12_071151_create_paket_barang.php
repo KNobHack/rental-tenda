@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('barang_id')->references('id')->on('barang');
             $table->foreignId('paket_id')->references('id')->on('paket');
+            $table->integer('jumlah');
         });
     }
 

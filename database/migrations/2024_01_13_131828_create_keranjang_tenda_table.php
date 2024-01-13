@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('paket_tenda', function (Blueprint $table) {
+        Schema::create('keranjang_tenda', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('penyewa_id')->references('id')->on('penyewa');
             $table->foreignId('tenda_id')->references('id')->on('tenda');
-            $table->foreignId('paket_id')->references('id')->on('paket');
             $table->integer('jumlah');
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('paket_tenda');
+        Schema::dropIfExists('keranjang_tenda');
     }
 };
