@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect()->route('login');
+    return redirect()->route('beranda');
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -38,8 +38,5 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
     });
-
-    Route::group(['middleware' => 'role:customer'], function () {
-        Route::get('/home', [HomeController::class, 'breanda'])->name('home');
-    });
 });
+Route::get('/beranda', [HomeController::class, 'beranda'])->name('beranda');
