@@ -43,7 +43,7 @@
                 </ul>
               </div>
               <div class="product__item__text">
-                <h6><a href="#">{{ $i->nama ?? $i->merek }}</a></h6>
+                <h6><a href="{{ $i->link_detail }}">{{ $i->nama ?? $i->merek }}</a></h6>
                 <h5>Rp. {{ number_format($i->harga, 0, ',', '.') }} / hari</h5>
               </div>
             </div>

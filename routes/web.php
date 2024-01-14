@@ -29,6 +29,9 @@ Route::get('/beranda', [HomeController::class, 'beranda'])->name('beranda');
 Route::get('/sewa/paket', [HomeController::class, 'sewaPaket'])->name('sewa-paket');
 Route::get('/sewa/tenda', [HomeController::class, 'sewaTenda'])->name('sewa-tenda');
 Route::get('/sewa/barang', [HomeController::class, 'sewaBarang'])->name('sewa-barang');
+Route::get('/sewa/detail/paket/{paket}', [HomeController::class, 'detailPaket'])->name('sewa-detail-paket');
+Route::get('/sewa/detail/tenda/{tenda}', [HomeController::class, 'detailTenda'])->name('sewa-detail-tenda');
+Route::get('/sewa/detail/barang/{barang}', [HomeController::class, 'detailBarang'])->name('sewa-detail-barang');
 Route::group(['middleware' => 'auth'], function () {
 
     Route::group(['middleware' => 'role:admin'], function () {

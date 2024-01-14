@@ -21,6 +21,12 @@ class HomeController extends Controller
         } else {
             $paket = Paket::all();
         }
+
+        $paket = $paket->map(function ($v) {
+            $v->link_detail = route('sewa-detail-paket', $v->id);
+            return $v;
+        });
+
         return view('home.sewa', [
             'title' => 'Sewa Paket',
             'item' => $paket
@@ -35,6 +41,11 @@ class HomeController extends Controller
             $tenda = Tenda::all();
         }
 
+        $tenda = $tenda->map(function ($v) {
+            $v->link_detail = route('sewa-detail-tenda', $v->id);
+            return $v;
+        });
+
         return view('home.sewa', [
             'title' => 'Sewa Tenda',
             'item' => $tenda
@@ -48,9 +59,36 @@ class HomeController extends Controller
         } else {
             $barang = Barang::all();
         }
+
+        $barang = $barang->map(function ($v) {
+            $v->link_detail = route('sewa-detail-barang', $v->id);
+            return $v;
+        });
+
         return view('home.sewa', [
             'title' => 'Sewa Barang',
             'item' => $barang
+        ]);
+    }
+
+    public function detailPaket(Paket $paket)
+    {
+        return view('home.detail.paket', [
+            'paket' => $paket,
+        ]);
+    }
+
+    public function detailTenda(Tenda $tenda)
+    {
+        return view('home.detail.tenda', [
+            'tenda' => $tenda,
+        ]);
+    }
+
+    public function detailBarang(Barang $barang)
+    {
+        return view('home.detail.barang', [
+            'barang' => $barang,
         ]);
     }
 }
