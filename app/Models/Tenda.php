@@ -25,6 +25,8 @@ class Tenda extends Model
 
     public function paket(): Relation
     {
-        return $this->belongsToMany(Paket::class);
+        return $this->belongsToMany(Paket::class)
+            ->as('tenda_paket')
+            ->withPivot(['jumlah']);
     }
 }

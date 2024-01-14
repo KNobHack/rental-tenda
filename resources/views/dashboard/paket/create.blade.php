@@ -33,15 +33,21 @@
                 @enderror
               </div>
 
-              <div class="form-group">
-                <label for="tenda">Tenda (Tekan ctrl untuk memilih banyak)</label>
-                <select multiple class="form-control" id="tenda" name="tenda[]">
-                  @foreach ($tenda as $td)
-                    <option value="{{ $td->id }}">{{ $td->merek }}</option>
-                  @endforeach
-                </select>
-              </div>
-
+              <label for="tenda">Tenda</label>
+              @foreach ($tenda as $td)
+                <div class="form-group row">
+                  <label for="input-tenda-{{ $td->id }}" class="col-sm-9 col-form-label">{{ $td->merek }}</label>
+                  <div class="col-sm-3">
+                    <input type="number" name="tenda[{{ $td->id }}]" class="form-control" value="0"
+                      id="input-tenda-{{ $td->id }}">
+                    @error('tenda.' . $td->id)
+                      <div class="text-small text-danger">
+                        {{ $message }}
+                      </div>
+                    @enderror
+                  </div>
+                </div>
+              @endforeach
             </div>
 
             <div class="col-md-6">
@@ -55,14 +61,22 @@
                 @enderror
               </div>
 
-              <div class="form-group">
-                <label for="barang">Barang (Tekan ctrl untuk memilih banyak)</label>
-                <select multiple class="form-control" id="barang" name="barang[]">
-                  @foreach ($barang as $br)
-                    <option value="{{ $br->id }}">{{ $br->nama }}</option>
-                  @endforeach
-                </select>
-              </div>
+              <label for="tenda">Barang</label>
+              @foreach ($barang as $br)
+                <div class="form-group row">
+                  <label for="input-barang-{{ $br->id }}"
+                    class="col-sm-9 col-form-label">{{ $br->nama }}</label>
+                  <div class="col-sm-3">
+                    <input type="number" name="barang[{{ $br->id }}]" class="form-control" value="0"
+                      id="input-barang-{{ $br->id }}">
+                    @error('barang.' . $br->id)
+                      <div class="text-small text-danger">
+                        {{ $message }}
+                      </div>
+                    @enderror
+                  </div>
+                </div>
+              @endforeach
 
               <div class="form-group">
                 <label for="">Gambar</label>

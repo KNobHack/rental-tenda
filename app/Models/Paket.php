@@ -20,11 +20,15 @@ class Paket extends Model
 
     public function tenda(): Relation
     {
-        return $this->belongsToMany(Tenda::class);
+        return $this->belongsToMany(Tenda::class)
+            ->as('tenda_paket')
+            ->withPivot(['jumlah']);
     }
 
     public function barang(): Relation
     {
-        return $this->belongsToMany(Barang::class, 'paket_barang');
+        return $this->belongsToMany(Barang::class, 'paket_barang')
+            ->as('barang_paket')
+            ->withPivot(['jumlah']);
     }
 }

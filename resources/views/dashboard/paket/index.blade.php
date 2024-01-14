@@ -39,12 +39,12 @@
           <td><?= $pkt->denda ?></td>
           <td>
             @foreach ($pkt->tenda as $td)
-              <span class="badge badge-primary">{{ $td->merek }}</span>
+              <span class="badge badge-primary">{{ $td->tenda_paket->jumlah }} {{ $td->merek }}</span>
             @endforeach
           </td>
           <td>
             @foreach ($pkt->barang as $br)
-              <span class="badge badge-primary">{{ $br->nama }}</span>
+              <span class="badge badge-primary">{{ $br->barang_paket->jumlah }} {{ $br->nama }}</span>
             @endforeach
           </td>
           <td>

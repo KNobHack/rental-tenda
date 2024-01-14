@@ -45,6 +45,19 @@ class PaketController extends Controller
             'gambar' => ['required', 'image'],
         ])->validate();
 
+        $tenda = collect($validated['tenda'])
+            ->filter(function ($v) {
+                return $v > 0;
+            })->map(function ($v) {
+                return ['jumlah' => $v];
+            });
+        $barang = collect($validated['barang'])
+            ->filter(function ($v) {
+                return $v > 0;
+            })->map(function ($v) {
+                return ['jumlah' => $v];
+            });
+
         $gambar = $request->file('gambar');
         $gambar->store('/');
 
@@ -55,8 +68,8 @@ class PaketController extends Controller
         $paket->gambar = $gambar->hashName();
         $paket->save();
 
-        $paket->tenda()->attach($validated['tenda'] ?? []);
-        $paket->barang()->attach($validated['barang'] ?? []);
+        $paket->tenda()->attach($tenda->toArray());
+        $paket->barang()->attach($barang->toArray());
 
         return redirect()->route('paket.index')
             ->with('alert', [
@@ -91,6 +104,19 @@ class PaketController extends Controller
             'gambar' => ['image'],
         ])->validate();
 
+        $tenda = collect($validated['tenda'])
+            ->filter(function ($v) {
+                return $v > 0;
+            })->map(function ($v) {
+                return ['jumlah' => $v];
+            });
+        $barang = collect($validated['barang'])
+            ->filter(function ($v) {
+                return $v > 0;
+            })->map(function ($v) {
+                return ['jumlah' => $v];
+            });
+
         $paket->nama   = $validated['nama'];
         $paket->harga  = $validated['harga'];
         $paket->denda  = $validated['denda'];
@@ -101,8 +127,8 @@ class PaketController extends Controller
         }
         $paket->save();
 
-        $paket->tenda()->sync($validated['tenda'] ?? []);
-        $paket->barang()->sync($validated['barang'] ?? []);
+        $paket->tenda()->sync($tenda->toArray());
+        $paket->barang()->sync($barang->toArray());
 
         return redirect()->route('paket.index')
             ->with('alert', [

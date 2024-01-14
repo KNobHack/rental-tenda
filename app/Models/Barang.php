@@ -20,6 +20,8 @@ class Barang extends Model
 
     public function paket(): Relation
     {
-        return $this->belongsToMany(Paket::class);
+        return $this->belongsToMany(Paket::class)
+            ->as('barang_paket')
+            ->withPivot(['jumlah']);
     }
 }
