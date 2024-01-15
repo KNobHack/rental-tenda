@@ -9,6 +9,7 @@ use App\Http\Controllers\PaketController;
 use App\Http\Controllers\TendaController;
 use App\Http\Controllers\TipeTendaController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\LaporanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,5 +57,6 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('customer', CustomerController::class)->except(['show']);
 
         Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
+        Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
     });
 });

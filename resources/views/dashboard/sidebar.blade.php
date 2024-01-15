@@ -1,5 +1,5 @@
 @php
-  use App\Models\User;
+use App\Models\User;
 @endphp
 
 <div class="navbar-bg"></div>
@@ -25,41 +25,41 @@
           <span>Dashboard</span></a>
       </li>
       @if (auth()->user()->role_id == User::ROLE['admin'])
-        <li>
-          <a class="nav-link" href="<?= route('tenda.index') ?>">
-            <i class="fas fa-car"></i>
-            <span>Data Tenda</span>
-          </a>
-        </li>
-        <li>
-          <a class="nav-link" href="<?= route('tipe_tenda.index') ?>">
-            <i class="fas fa-grip-horizontal"></i>
-            <span>Data Tipe</span></a>
-        </li>
-        <li>
-          <a class="nav-link" href="<?= route('barang.index') ?>">
-            <i class="fas fa-grip-horizontal"></i>
-            <span>Data Barang</span></a>
-        </li>
-        <li>
-          <a class="nav-link" href="<?= route('paket.index') ?>">
-            <i class="fas fa-car"></i>
-            <span>Data Paket</span>
-          </a>
-        </li>
-        <li>
-          <a class="nav-link" href="<?= route('customer.index') ?>">
-            <i class="fas fa-users"></i>
-            <span>Data Customer</span></a>
-        </li>
-        <li>
-          <a class="nav-link" href="<?= route('transaksi.index') ?>">
-            <i class="fas fa-random"></i>
-            <span>Transaksi</span></a>
-        </li>
+      <li>
+        <a class="nav-link" href="<?= route('tenda.index') ?>">
+          <i class="fas fa-car"></i>
+          <span>Data Tenda</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="<?= route('tipe_tenda.index') ?>">
+          <i class="fas fa-grip-horizontal"></i>
+          <span>Data Tipe</span></a>
+      </li>
+      <li>
+        <a class="nav-link" href="<?= route('barang.index') ?>">
+          <i class="fas fa-grip-horizontal"></i>
+          <span>Data Barang</span></a>
+      </li>
+      <li>
+        <a class="nav-link" href="<?= route('paket.index') ?>">
+          <i class="fas fa-car"></i>
+          <span>Data Paket</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" href="<?= route('customer.index') ?>">
+          <i class="fas fa-users"></i>
+          <span>Data Customer</span></a>
+      </li>
+      <li>
+        <a class="nav-link" href="<?= route('transaksi.index') ?>">
+          <i class="fas fa-random"></i>
+          <span>Transaksi</span></a>
+      </li>
       @endif
       <li>
-        <a class="nav-link" href="<?= url('admin/laporan') ?>">
+        <a class="nav-link" href="<?= route('laporan.index') ?>">
           <i class="fas fa-clipboard-list"></i>
           <span>Laporan</span></a>
       </li>
