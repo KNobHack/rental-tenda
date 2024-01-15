@@ -40,7 +40,6 @@
         <li><a href="#"><i class="fa fa-random"></i></a></li>
         <li><a href="#"><i class="fa fa-shopping-bag"></i></a></li>
       </ul>
-      <div class="header__cart__price">total: <span>$150.00</span></div>
     </div>
     <div class="humberger__menu__widget">
       <div class="header__top__right__auth">
@@ -66,7 +65,7 @@
     </div>
     <div class="humberger__menu__contact">
       <ul>
-        <li><i class="fa fa-envelope"></i> cs@tendaciremai11.com</li>
+        <li><i class="fa fa-envelope"></i> cs@nyutoutdoor.com</li>
       </ul>
     </div>
   </div>
@@ -80,7 +79,7 @@
           <div class="col-lg-6 col-md-6">
             <div class="header__top__left">
               <ul>
-                <li><i class="fa fa-envelope"></i> cs@tendaciremai11.com</li>
+                <li><i class="fa fa-envelope"></i> cs@nyutoutdoor.com</li>
               </ul>
             </div>
           </div>
@@ -154,7 +153,8 @@
               <a href="./index.html"><img src="img/logo.png" alt=""></a>
             </div>
             <ul>
-              <li>Alamat: Jl. Raya Cigugur, Kuningan, Kec. Kuningan, Kabupaten Kuningan, Jawa Barat 45511</li>
+              <li>Alamat: Jalan Raya Cigugur No 28, Desa/Kelurahan Cigugur, Kec. Cigugur, Kab. Kuningan, Provinsi Jawa
+                Barat.</li>
               <li>Telepon: +62 831-0125-3134</li>
               {{-- <li>Email: hello@colorlib.com</li> --}}
             </ul>
