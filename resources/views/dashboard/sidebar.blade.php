@@ -1,3 +1,7 @@
+@php
+  use App\Models\User;
+@endphp
+
 <div class="navbar-bg"></div>
 <nav class="navbar navbar-expand-lg main-navbar">
   <ul class="navbar-nav navbar-right">
@@ -20,38 +24,40 @@
         <a class="nav-link" href="<?= route('dashboard') ?>"><i class="fas fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
-      <li>
-        <a class="nav-link" href="<?= route('tenda.index') ?>">
-          <i class="fas fa-car"></i>
-          <span>Data Tenda</span>
-        </a>
-      </li>
-      <li>
-        <a class="nav-link" href="<?= route('tipe_tenda.index') ?>">
-          <i class="fas fa-grip-horizontal"></i>
-          <span>Data Tipe</span></a>
-      </li>
-      <li>
-        <a class="nav-link" href="<?= route('barang.index') ?>">
-          <i class="fas fa-grip-horizontal"></i>
-          <span>Data Barang</span></a>
-      </li>
-      <li>
-        <a class="nav-link" href="<?= route('paket.index') ?>">
-          <i class="fas fa-car"></i>
-          <span>Data Paket</span>
-        </a>
-      </li>
-      <li>
-        <a class="nav-link" href="<?= route('customer.index') ?>">
-          <i class="fas fa-users"></i>
-          <span>Data Customer</span></a>
-      </li>
-      <li>
-        <a class="nav-link" href="<?= route('transaksi.index') ?>">
-          <i class="fas fa-random"></i>
-          <span>Transaksi</span></a>
-      </li>
+      @if (auth()->user()->role_id == User::ROLE['admin'])
+        <li>
+          <a class="nav-link" href="<?= route('tenda.index') ?>">
+            <i class="fas fa-car"></i>
+            <span>Data Tenda</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="<?= route('tipe_tenda.index') ?>">
+            <i class="fas fa-grip-horizontal"></i>
+            <span>Data Tipe</span></a>
+        </li>
+        <li>
+          <a class="nav-link" href="<?= route('barang.index') ?>">
+            <i class="fas fa-grip-horizontal"></i>
+            <span>Data Barang</span></a>
+        </li>
+        <li>
+          <a class="nav-link" href="<?= route('paket.index') ?>">
+            <i class="fas fa-car"></i>
+            <span>Data Paket</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="<?= route('customer.index') ?>">
+            <i class="fas fa-users"></i>
+            <span>Data Customer</span></a>
+        </li>
+        <li>
+          <a class="nav-link" href="<?= route('transaksi.index') ?>">
+            <i class="fas fa-random"></i>
+            <span>Transaksi</span></a>
+        </li>
+      @endif
       <li>
         <a class="nav-link" href="<?= url('admin/laporan') ?>">
           <i class="fas fa-clipboard-list"></i>
@@ -65,10 +71,10 @@
       <form action="<?= route('logout') ?>" id="form-logout" method="POST">
         @csrf
       </form>
-      <li>
+      {{-- <li>
         <a class="nav-link" href="<?= url('auth/ganti_password') ?>"><i class="fas fa-lock"></i>
           <span>Ganti Password</span></a>
-      </li>
+      </li> --}}
     </ul>
   </aside>
 </div>

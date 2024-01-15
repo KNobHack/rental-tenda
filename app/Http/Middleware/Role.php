@@ -24,8 +24,8 @@ class Role
                 case User::ROLE['customer']:
                     return redirect()->route('beranda');
                     break;
-                case User::ROLE['invaestor']:
-                    return redirect()->route('laporan');
+                case User::ROLE['investor']:
+                    return redirect()->route('dashboard');
                     break;
                 default:
                     return 'terjadi kesalahan';
