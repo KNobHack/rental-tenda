@@ -13,6 +13,11 @@ class Rental extends Model
     protected $table = 'rental';
     public $timestamps = false;
 
+    public function penyewa(): Relation
+    {
+        return $this->belongsTo(Penyewa::class);
+    }
+
     public function paket(): Relation
     {
         return $this->belongsToMany(Paket::class)
@@ -29,7 +34,7 @@ class Rental extends Model
 
     public function barang(): Relation
     {
-        return $this->belongsToMany(Barang::class)
+        return $this->belongsToMany(Barang::class, 'rental_barang')
             ->as('rental_barang')
             ->withPivot(['jumlah']);
     }

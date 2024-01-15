@@ -31,4 +31,9 @@ class Penyewa extends Model
     {
         return $this->hasOne(Keranjang::class);
     }
+
+    public function rental(): Relation
+    {
+        return $this->hasMany(Rental::class);
+    }
 }
