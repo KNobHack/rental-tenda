@@ -44,7 +44,12 @@
     </div>
     <div class="humberger__menu__widget">
       <div class="header__top__right__auth">
-        <a href="#"><i class="fa fa-user"></i> Login</a>
+        @guest
+          <a href="{{ route('login') }}"><i class="fa fa-user"></i> Login</a>
+        @endguest
+        @auth
+          <i class="fa fa-user"></i> {{ auth()->user()->penyewa->nama }}
+        @endauth
       </div>
     </div>
     <nav class="humberger__menu__nav mobile-menu">
@@ -61,7 +66,7 @@
     </div>
     <div class="humberger__menu__contact">
       <ul>
-        <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+        <li><i class="fa fa-envelope"></i> cs@tendaciremai11.com</li>
       </ul>
     </div>
   </div>
@@ -75,7 +80,7 @@
           <div class="col-lg-6 col-md-6">
             <div class="header__top__left">
               <ul>
-                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                <li><i class="fa fa-envelope"></i> cs@tendaciremai11.com</li>
               </ul>
             </div>
           </div>
@@ -83,9 +88,21 @@
             <div class="header__top__right">
               <div class="header__top__right__social">
                 <a href="#"><i class="fa fa-instagram"></i></a>
+                @auth
+                  <form action="{{ route('logout') }}" class="d-none" id="form-logout" method="POST">
+                    @csrf
+                    @method('POST')
+                  </form>
+                  <a href="#" onclick="document.getElementById('form-logout').submit()">Logout</a>
+                @endauth
               </div>
               <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
+                @guest
+                  <a href="{{ route('login') }}"><i class="fa fa-user"></i> Login</a>
+                @endguest
+                @auth
+                  <i class="fa fa-user"></i> {{ auth()->user()->username }}
+                @endauth
               </div>
             </div>
           </div>
@@ -112,10 +129,9 @@
         <div class="col-lg-3">
           <div class="header__cart">
             <ul>
-              <li><a href="#"><i class="fa fa-random"></i> <span>3</span></a></li>
-              <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+              <li><a href="#"><i class="fa fa-random"></i></a></li>
+              <li><a href="{{ route('keranjang') }}"><i class="fa fa-shopping-bag"></i></a></li>
             </ul>
-            <div class="header__cart__price">total: <span>$150.00</span></div>
           </div>
         </div>
       </div>

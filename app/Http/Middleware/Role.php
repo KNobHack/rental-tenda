@@ -22,7 +22,7 @@ class Role
                     return redirect()->route('dashboard');
                     break;
                 case User::ROLE['customer']:
-                    return redirect()->route('home');
+                    return redirect()->route('beranda');
                     break;
                 case User::ROLE['invaestor']:
                     return redirect()->route('laporan');

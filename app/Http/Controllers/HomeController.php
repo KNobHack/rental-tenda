@@ -24,6 +24,7 @@ class HomeController extends Controller
 
         $paket = $paket->map(function ($v) {
             $v->link_detail = route('sewa-detail-paket', $v->id);
+            $v->link_keranjang = route('keranjang.tambah.paket', $v->id);
             return $v;
         });
 
@@ -43,6 +44,7 @@ class HomeController extends Controller
 
         $tenda = $tenda->map(function ($v) {
             $v->link_detail = route('sewa-detail-tenda', $v->id);
+            $v->link_keranjang = route('keranjang.tambah.tenda', $v->id);
             return $v;
         });
 
@@ -62,6 +64,7 @@ class HomeController extends Controller
 
         $barang = $barang->map(function ($v) {
             $v->link_detail = route('sewa-detail-barang', $v->id);
+            $v->link_keranjang = route('keranjang.tambah.barang', $v->id);
             return $v;
         });
 

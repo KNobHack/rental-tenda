@@ -27,18 +27,8 @@ class Penyewa extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function keranjangBarang(): Relation
+    function keranjang(): Relation
     {
-        return $this->belongsToMany(Barang::class, 'keranjang_barang');
-    }
-
-    public function keranjangTenda(): Relation
-    {
-        return $this->belongsToMany(Tenda::class, 'keranjang_tenda');
-    }
-
-    public function keranjangPaket(): Relation
-    {
-        return $this->belongsToMany(Paket::class, 'keranjang_paket');
+        return $this->hasOne(Keranjang::class);
     }
 }

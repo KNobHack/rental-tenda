@@ -39,7 +39,13 @@
             <div class="product__item">
               <div class="product__item__pic set-bg" data-setbg="{{ url('/assets/upload/' . $i->gambar) }}">
                 <ul class="product__item__pic__hover">
-                  <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                  <li>
+                    <a href="#" onclick="document.getElementById('keranjang-{{ $i->id }}').submit()"><i
+                        class="fa fa-shopping-cart"></i></a>
+                    <form action="{{ $i->link_keranjang }}" method="POST" id="keranjang-{{ $i->id }}">
+                      @csrf
+                    </form>
+                  </li>
                 </ul>
               </div>
               <div class="product__item__text">

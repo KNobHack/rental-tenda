@@ -27,7 +27,9 @@
           <div class="product__details__text">
             <h3>{{ $paket->nama }}</h3>
             <div class="product__details__price">Rp. {{ number_format($paket->harga, 0, ',', '.') }} / hari</div>
-            <form action="" style="display: inline">
+            <form style="display: inline" action="{{ route('keranjang.tambah.paket', $paket->id) }}" method="POST"
+              id="form-keranjang">
+              @csrf
               <div class="product__details__quantity">
                 <div class="quantity">
                   <div class="pro-qty">
@@ -36,7 +38,8 @@
                 </div>
               </div>
             </form>
-            <a href="#" class="primary-btn">Masukkan ke keranjang</a>
+            <a href="#" class="primary-btn" onclick="document.getElementById('form-keranjang').submit()">Masukkan ke
+              keranjang</a>
             <ul>
               {{-- <li><b>Ketersediaan</b> <span>In Stock</span></li> --}}
               <li><b>Tenda</b> <span>

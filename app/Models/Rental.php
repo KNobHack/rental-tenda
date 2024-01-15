@@ -15,17 +15,23 @@ class Rental extends Model
 
     public function paket(): Relation
     {
-        return $this->belongsToMany(Paket::class);
+        return $this->belongsToMany(Paket::class)
+            ->as('rental_paket')
+            ->withPivot(['jumlah']);
     }
 
     public function tenda(): Relation
     {
-        return $this->belongsToMany(Tenda::class);
+        return $this->belongsToMany(Tenda::class)
+            ->as('rental_tenda')
+            ->withPivot(['jumlah']);
     }
 
     public function barang(): Relation
     {
-        return $this->belongsToMany(Barang::class);
+        return $this->belongsToMany(Barang::class)
+            ->as('rental_barang')
+            ->withPivot(['jumlah']);
     }
 
     public function transaksi(): Relation

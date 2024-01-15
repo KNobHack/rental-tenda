@@ -4,6 +4,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\TendaController;
 use App\Http\Controllers\TipeTendaController;
@@ -33,6 +34,17 @@ Route::get('/sewa/detail/paket/{paket}', [HomeController::class, 'detailPaket'])
 Route::get('/sewa/detail/tenda/{tenda}', [HomeController::class, 'detailTenda'])->name('sewa-detail-tenda');
 Route::get('/sewa/detail/barang/{barang}', [HomeController::class, 'detailBarang'])->name('sewa-detail-barang');
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/keranjang', [KeranjangController::class, 'index'])->name('keranjang');
+    Route::post('/keranjang/tambah/paket/{paket}', [KeranjangController::class, 'tambahPaket'])->name('keranjang.tambah.paket');
+    Route::post('/keranjang/tambah/tenda/{tenda}', [KeranjangController::class, 'tambahTenda'])->name('keranjang.tambah.tenda');
+    Route::post('/keranjang/tambah/barang/{barang}', [KeranjangController::class, 'tambahBarang'])->name('keranjang.tambah.barang');
+    Route::delete('/keranjang/hapus/paket/{paket}', [KeranjangController::class, 'hapusPaket'])->name('keranjang.hapus.paket');
+    Route::delete('/keranjang/hapus/tenda/{tenda}', [KeranjangController::class, 'hapusTenda'])->name('keranjang.hapus.tenda');
+    Route::delete('/keranjang/hapus/barang/{barang}', [KeranjangController::class, 'hapusBarang'])->name('keranjang.hapus.barang');
+    Route::post('/keranjang/set/tanggal', [KeranjangController::class, 'setTanggal'])->name('keranjang.setTanggal');
+    Route::get('/checkout', [KeranjangController::class, 'checkoutPreview'])->name('checkout.preview');
+    Route::post('/checkout', [KeranjangController::class, 'checkout'])->name('checkout');
 
     Route::group(['middleware' => 'role:admin'], function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
