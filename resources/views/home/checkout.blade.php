@@ -62,7 +62,10 @@
               <div class="checkout__order__total">Total <span>Rp. {{ number_format($total, 0, ',', '.') }}</span></div>
               <p>Jika terlambat mengembalikan, maka akan di denda sebesar Rp.
                 {{ number_format($subdenda, 0, ',', '.') }} / hari</p>
-              <button type="submit" class="site-btn">Pesan</button>
+              <form action="{{ route('checkout') }}" method="POST">
+                @csrf
+                <button type="submit" class="site-btn">Pesan</button>
+              </form>
             </div>
           </div>
         </div>

@@ -115,6 +115,8 @@ class KeranjangController extends Controller
 
     public function checkoutPreview()
     {
+        $this->keranjangInit();
+
         $penyewa = auth()->user()->penyewa;
         $keranjang = $penyewa->keranjang;
 
@@ -177,12 +179,15 @@ class KeranjangController extends Controller
         $transaksi->rental_id = $rental->id;
         $transaksi->harga = $total;
         $transaksi->denda = $subdenda;
+        $transaksi->lunas = false;
         $transaksi->save();
 
         $keranjang->paket()->detach();
         $keranjang->tenda()->detach();
         $keranjang->barang()->detach();
         $keranjang->delete();
+
+        return redirect()->route('beranda');
     }
 
     private function hitungKeranjang(Keranjang $keranjang)
